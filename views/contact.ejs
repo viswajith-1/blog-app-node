@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Current</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Configure Tailwind to use the sans-serif font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-3xl font-bold text-indigo-600">The Current</span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        Home
+                    </a>
+                    <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        About
+                    </a>
+                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        Topics
+                    </a>
+                    <a href="/contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-extrabold tracking-tight text-gray-900">
+                Get in Touch
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl">
+                Have a question, comment, or tip? We'd love to hear from you. Fill out the form below or email us directly.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content - Contact Form -->
+    <main class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+                
+                <!-- Contact Information -->
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900">Contact Information</h2>
+                    <p class="mt-4 text-lg text-gray-600">
+                        You can reach our editorial team via the following channels. We do our best to respond to all inquiries within 48 business hours.
+                    </p>
+                    <div class="mt-8 space-y-6">
+                        <!-- Email -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <!-- Heroicon: envelope -->
+                                <svg class="h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91A2.25 2.25 0 0 1 2.25 6.993V6.75" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-gray-900">Email</h3>
+                                <p class="mt-1 text-lg text-gray-600">For general inquiries:</p>
+                                <a href="mailto:hello@thecurrent.com" class="text-lg text-indigo-600 hover:text-indigo-800 font-medium">hello@thecurrent.com</a>
+                                <p class="mt-2 text-lg text-gray-600">For press & media:</p>
+                                <a href="mailto:press@thecurrent.com" class="text-lg text-indigo-600 hover:text-indigo-800 font-medium">press@thecurrent.com</a>
+                            </div>
+                        </div>
+                        <!-- Socials -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <!-- Heroicon: link -->
+                                <svg class="h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-gray-900">On the Web</h3>
+                                <a href="#" class="text-lg text-indigo-600 hover:text-indigo-800 font-medium">Twitter / X</a>
+                                <br>
+                                <a href="#" class="text-lg text-indigo-600 hover:text-indigo-800 font-medium">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="mt-12 lg:mt-0">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="full-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <div class="mt-1">
+                                    <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <div class="mt-1">
+                                    <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                                <div class="mt-1">
+                                    <input type="text" name="subject" id="subject" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                <div class="mt-1">
+                                    <textarea id="message" name="message" rows="6" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border"></textarea>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200">
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-base text-gray-400">
+                &copy; 2025 The Current. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
