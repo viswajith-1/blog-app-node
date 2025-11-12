@@ -1,147 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - The Current</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Configure Tailwind to use the sans-serif font -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
             },
-        }
+          },
+        },
+      };
     </script>
-</head>
-<body class="font-sans bg-gray-50 text-gray-900">
-
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-900">
     <!-- Header Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-3xl font-bold text-indigo-600">The Current</span>
-                </div>
-                <!-- Navigation Links -->
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        Home
-                    </a>
-                    <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900">
-                        About
-                    </a>
-                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        Topics
-                    </a>
-                    <a href="/contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        Contact
-                    </a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-3xl font-bold text-indigo-600">The Current</span>
+          </div>
+          <!-- Navigation Links -->
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a
+              href="/"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900"
+            >
+              About
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Topics
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Contact
+            </a>
+            <a
+              href="/create"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Create Post
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Page Header -->
     <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-5xl font-extrabold tracking-tight text-gray-900">
-                About The Current
-            </h1>
-            <p class="mt-4 text-xl text-gray-600 max-w-3xl">
-                We believe in the power of great ideas. Our mission is to provide clear, insightful commentary on the topics that shape our world.
-            </p>
-        </div>
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-5xl font-extrabold tracking-tight text-gray-900">
+          About The Current
+        </h1>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl">
+          We believe in the power of great ideas. Our mission is to provide
+          clear, insightful commentary on the topics that shape our world.
+        </p>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <!-- Our Story Section -->
-            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold text-gray-900">Our Story</h2>
-                    <p class="mt-4 text-lg text-gray-600">
-                        "The Current" was started in 2024 as a small project to track the fast-moving trends in technology. We quickly realized that technology doesn't exist in a vacuum. It's deeply intertwined with design, and both are reflections of our broader culture.
-                    </p>
-                    <p class="mt-4 text-lg text-gray-600">
-                        Our blog expanded to cover all three pillars, with a focus on delivering high-quality, well-researched articles that respect our readers' time and intelligence. We are not about clickbait; we are about conversation.
-                    </p>
-                </div>
-                <div class="mt-12 lg:mt-0">
-                    <h2 class="text-3xl font-extrabold text-gray-900">Our Mission</h2>
-                    <p class="mt-4 text-lg text-gray-600">
-                        Our mission is simple: to make sense of the complex. We aim to be a reliable source for anyone curious about the "why" behind the "what."
-                    </p>
-                    <ul class="mt-4 space-y-2 list-disc list-inside text-lg text-gray-600">
-                        <li>To analyze, not just report.</li>
-                        <li>To explore nuances, not just headlines.</li>
-                        <li>To build a community of curious minds.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Team Section -->
-            <div class="mt-24">
-                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 text-center">
-                    Meet the Team
-                </h2>
-                <p class="mt-4 max-w-2xl mx-auto text-center text-xl text-gray-600">
-                    We're a small, dedicated group of writers and thinkers.
-                </p>
-
-                <div class="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-                    <!-- Team Member 1 -->
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold text-gray-900">Alex Johnson</h3>
-                        <p class="mt-1 text-base font-medium text-indigo-600">Founder & Lead Technology Editor</p>
-                        <p class="mt-4 text-gray-600">
-                            With a background in software engineering, Alex writes about the future of AI, development, and the tech industry's cultural impact.
-                        </p>
-                    </div>
-
-                    <!-- Team Member 2 -->
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold text-gray-900">Maria Garcia</h3>
-                        <p class="mt-1 text-base font-medium text-indigo-600">Senior Design Contributor</p>
-                        <p class="mt-4 text-gray-600">
-                            Maria is a UX/UI designer who explores the principles of minimalism, user-centric design, and the intersection of art and utility.
-                        </p>
-                    </div>
-
-                    <!-- Team Member 3 -->
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold text-gray-900">David Kim</h3>
-                        <p class="mt-1 text-base font-medium text-indigo-600">Culture & Media Analyst</p>
-                        <p class="mt-4 text-gray-600">
-                            David covers the creator economy, remote work, and the shifting trends in how we live, work, and connect with each other.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Our Story Section -->
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div>
+            <h2 class="text-3xl font-extrabold text-gray-900">Our Story</h2>
+            <p class="mt-4 text-lg text-gray-600">
+              "The Current" was started in 2024 as a small project to track the
+              fast-moving trends in technology. We quickly realized that
+              technology doesn't exist in a vacuum. It's deeply intertwined with
+              design, and both are reflections of our broader culture.
+            </p>
+            <p class="mt-4 text-lg text-gray-600">
+              Our blog expanded to cover all three pillars, with a focus on
+              delivering high-quality, well-researched articles that respect our
+              readers' time and intelligence. We are not about clickbait; we are
+              about conversation.
+            </p>
+          </div>
+          <div class="mt-12 lg:mt-0">
+            <h2 class="text-3xl font-extrabold text-gray-900">Our Mission</h2>
+            <p class="mt-4 text-lg text-gray-600">
+              Our mission is simple: to make sense of the complex. We aim to be
+              a reliable source for anyone curious about the "why" behind the
+              "what."
+            </p>
+            <ul
+              class="mt-4 space-y-2 list-disc list-inside text-lg text-gray-600"
+            >
+              <li>To analyze, not just report.</li>
+              <li>To explore nuances, not just headlines.</li>
+              <li>To build a community of curious minds.</li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Team Section -->
+        <div class="mt-24">
+          <h2
+            class="text-3xl font-extrabold tracking-tight text-gray-900 text-center"
+          >
+            Meet the Team
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-center text-xl text-gray-600">
+            We're a small, dedicated group of writers and thinkers.
+          </p>
+
+          <div class="mt-12 grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900">Alex Johnson</h3>
+              <p class="mt-1 text-base font-medium text-indigo-600">
+                Founder & Lead Technology Editor
+              </p>
+              <p class="mt-4 text-gray-600">
+                With a background in software engineering, Alex writes about the
+                future of AI, development, and the tech industry's cultural
+                impact.
+              </p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900">Maria Garcia</h3>
+              <p class="mt-1 text-base font-medium text-indigo-600">
+                Senior Design Contributor
+              </p>
+              <p class="mt-4 text-gray-600">
+                Maria is a UX/UI designer who explores the principles of
+                minimalism, user-centric design, and the intersection of art and
+                utility.
+              </p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-lg shadow-lg p-8">
+              <h3 class="text-2xl font-bold text-gray-900">David Kim</h3>
+              <p class="mt-1 text-base font-medium text-indigo-600">
+                Culture & Media Analyst
+              </p>
+              <p class="mt-4 text-gray-600">
+                David covers the creator economy, remote work, and the shifting
+                trends in how we live, work, and connect with each other.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 mt-16">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-base text-gray-400">
-                &copy; 2025 The Current. All rights reserved.
-            </p>
-        </div>
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-base text-gray-400">
+          &copy; 2025 The Current. All rights reserved.
+        </p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

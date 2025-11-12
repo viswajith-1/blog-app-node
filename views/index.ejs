@@ -1,193 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Current - A Modern Blog</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Configure Tailwind to use the sans-serif font -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
             },
-        }
+          },
+        },
+      };
     </script>
-</head>
-<body class="font-sans bg-gray-50 text-gray-900">
-
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-900">
     <!-- Header Navigation -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <span class="text-3xl font-bold text-indigo-600">The Current</span>
-                </div>
-                <!-- Navigation Links -->
-                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                    <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900">
-                        Home
-                    </a>
-                    <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        About
-                    </a>
-                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        Topics
-                    </a>
-                    <a href="/contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                        Contact
-                    </a>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-3xl font-bold text-indigo-600">The Current</span>
+          </div>
+          <!-- Navigation Links -->
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a
+              href="/"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              About
+            </a>
+            <a
+              href="#"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Topics
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Contact
+            </a>
+            <a
+              href="/create"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Create Post
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="bg-indigo-600 text-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Ideas & Insights
-            </h1>
-            <p class="mt-6 text-xl text-indigo-100 max-w-3xl mx-auto">
-                A collection of thoughts on design, technology, and culture.
-            </p>
-        </div>
+      <div
+        class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center"
+      >
+        <h1
+          class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+        >
+          Ideas & Insights
+        </h1>
+        <p class="mt-6 text-xl text-indigo-100 max-w-3xl mx-auto">
+          A collection of thoughts on design, technology, and culture.
+        </p>
+      </div>
     </header>
 
     <!-- Main Content - Blog Post Grid -->
     <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-8">
-            Latest Posts
-        </h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 mb-8">
+        Latest Posts
+      </h2>
 
-        <!-- Static Post Grid -->
-        <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-            
-            <!-- Static Blog Post Card 1 -->
-            <div class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <!-- Post Content -->
-                <div class="p-8 flex-grow flex flex-col">
-                    <!-- Post Category -->
-                    <span class="text-indigo-600 text-sm font-medium uppercase tracking-wide">Technology</span>
-                    
-                    <!-- Post Title -->
-                    <a href="#" class="block mt-2">
-                        <h3 class="text-3xl font-bold text-gray-900 hover:text-indigo-700">
-                            The Future of AI
-                        </h3>
-                    </a>
-                    
-                    <!-- Post Snippet -->
-                    <p class="mt-4 text-lg text-gray-600 flex-grow">
-                        Exploring the next wave of artificial intelligence and its impact on our daily lives.
-                    </p>
-                    
-                    <!-- Post Meta -->
-                    <div class="mt-8">
-                        <p class="text-sm font-medium text-gray-900">
-                            Alex Johnson
-                        </p>
-                        <div class="flex space-x-1 text-sm text-gray-500">
-                            <time datetime="2025-10-20">
-                                October 20, 2025
-                            </time>
-                        </div>
-                    </div>
-                </div>
+      <!-- Static Post Grid -->
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Static Blog Post Card 1 -->
+        <div
+          class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+        >
+          <!-- Post Content -->
+          <div class="p-8 flex-grow flex flex-col">
+            <!-- Post Category -->
+            <span
+              class="text-indigo-600 text-sm font-medium uppercase tracking-wide"
+              >Technology</span
+            >
+
+            <!-- Post Title -->
+            <a href="#" class="block mt-2">
+              <h3
+                class="text-3xl font-bold text-gray-900 hover:text-indigo-700"
+              >
+                The Future of AI
+              </h3>
+            </a>
+
+            <!-- Post Snippet -->
+            <p class="mt-4 text-lg text-gray-600 flex-grow">
+              Exploring the next wave of artificial intelligence and its impact
+              on our daily lives.
+            </p>
+
+            <!-- Post Meta -->
+            <div class="mt-8">
+              <p class="text-sm font-medium text-gray-900">Alex Johnson</p>
+              <div class="flex space-x-1 text-sm text-gray-500">
+                <time datetime="2025-10-20"> October 20, 2025 </time>
+              </div>
             </div>
-            <!-- End Blog Post Card 1 -->
-
-            <!-- Static Blog Post Card 2 -->
-            <div class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <!-- Post Content -->
-                <div class="p-8 flex-grow flex flex-col">
-                    <!-- Post Category -->
-                    <span class="text-indigo-600 text-sm font-medium uppercase tracking-wide">Design</span>
-                    
-                    <!-- Post Title -->
-                    <a href="#" class="block mt-2">
-                        <h3 class="text-3xl font-bold text-gray-900 hover:text-indigo-700">
-                            Minimalism in UI
-                        </h3>
-                    </a>
-                    
-                    <!-- Post Snippet -->
-                    <p class="mt-4 text-lg text-gray-600 flex-grow">
-                        Why "less is more" continues to be a driving principle in modern user interface design.
-                    </p>
-                    
-                    <!-- Post Meta -->
-                    <div class="mt-8">
-                        <p class="text-sm font-medium text-gray-900">
-                            Maria Garcia
-                        </p>
-                        <div class="flex space-x-1 text-sm text-gray-500">
-                            <time datetime="2025-10-22">
-                                October 22, 2025
-                            </time>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog Post Card 2 -->
-
-            <!-- Static Blog Post Card 3 -->
-            <div class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                <!-- Post Content -->
-                <div class="p-8 flex-grow flex flex-col">
-                    <!-- Post Category -->
-                    <span class="text-indigo-600 text-sm font-medium uppercase tracking-wide">Culture</span>
-                    
-                    <!-- Post Title -->
-                    <a href="#" class="block mt-2">
-                        <h3 class="text-3xl font-bold text-gray-900 hover:text-indigo-700">
-                            The Rise of Remote Work
-                        </h3>
-                    </a>
-                    
-                    <!-- Post Snippet -->
-                    <p class="mt-4 text-lg text-gray-600 flex-grow">
-                        How distributed teams are changing company culture and the urban landscape.
-                    </p>
-                    
-                    <!-- Post Meta -->
-                    <div class="mt-8">
-                        <p class="text-sm font-medium text-gray-900">
-                            David Kim
-                        </p>
-                        <div class="flex space-x-1 text-sm text-gray-500">
-                            <time datetime="2025-10-24">
-                                October 24, 2025
-                            </time>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Blog Post Card 3 -->
-
+          </div>
         </div>
-        <!-- End Static Post Grid -->
+        <!-- End Blog Post Card 1 -->
 
+        <!-- Static Blog Post Card 2 -->
+        <div
+          class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+        >
+          <!-- Post Content -->
+          <div class="p-8 flex-grow flex flex-col">
+            <!-- Post Category -->
+            <span
+              class="text-indigo-600 text-sm font-medium uppercase tracking-wide"
+              >Design</span
+            >
+
+            <!-- Post Title -->
+            <a href="#" class="block mt-2">
+              <h3
+                class="text-3xl font-bold text-gray-900 hover:text-indigo-700"
+              >
+                Minimalism in UI
+              </h3>
+            </a>
+
+            <!-- Post Snippet -->
+            <p class="mt-4 text-lg text-gray-600 flex-grow">
+              Why "less is more" continues to be a driving principle in modern
+              user interface design.
+            </p>
+
+            <!-- Post Meta -->
+            <div class="mt-8">
+              <p class="text-sm font-medium text-gray-900">Maria Garcia</p>
+              <div class="flex space-x-1 text-sm text-gray-500">
+                <time datetime="2025-10-22"> October 22, 2025 </time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Blog Post Card 2 -->
+
+        <!-- Static Blog Post Card 3 -->
+        <div
+          class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+        >
+          <!-- Post Content -->
+          <div class="p-8 flex-grow flex flex-col">
+            <!-- Post Category -->
+            <span
+              class="text-indigo-600 text-sm font-medium uppercase tracking-wide"
+              >Culture</span
+            >
+
+            <!-- Post Title -->
+            <a href="#" class="block mt-2">
+              <h3
+                class="text-3xl font-bold text-gray-900 hover:text-indigo-700"
+              >
+                The Rise of Remote Work
+              </h3>
+            </a>
+
+            <!-- Post Snippet -->
+            <p class="mt-4 text-lg text-gray-600 flex-grow">
+              How distributed teams are changing company culture and the urban
+              landscape.
+            </p>
+
+            <!-- Post Meta -->
+            <div class="mt-8">
+              <p class="text-sm font-medium text-gray-900">David Kim</p>
+              <div class="flex space-x-1 text-sm text-gray-500">
+                <time datetime="2025-10-24"> October 24, 2025 </time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Blog Post Card 3 -->
+      </div>
+      <!-- End Static Post Grid -->
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-800 mt-16">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-base text-gray-400">
-                &copy; 2025 The Current. All rights reserved.
-            </p>
-        </div>
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-base text-gray-400">
+          &copy; 2025 The Current. All rights reserved.
+        </p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

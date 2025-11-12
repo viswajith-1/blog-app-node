@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - The Current</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Configure Tailwind to use the sans-serif font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-3xl font-bold text-indigo-600">The Current</span>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="/" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        Home
+                    </a>
+                    <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        About
+                    </a>
+                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        Topics
+                    </a>
+                    <a href="/contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                        Contact
+                    </a>
+                    <!-- Active link for the create page -->
+                    <a href="/create" class="inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium text-gray-900">
+                        Create Post
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl font-extrabold tracking-tight text-gray-900">
+                Create a New Post
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl">
+                Fill out the fields below to publish a new article to the blog.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content - Create Form -->
+    <main class="py-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- 
+                  This form would typically send data to a backend server.
+                  The action="/create" and method="POST" are placeholders.
+                -->
+                <form action="/create" method="POST" class="space-y-6">
+                    
+                    <!-- Title -->
+                    <div>
+                        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                        <div class="mt-1">
+                            <input type="text" name="title" id="title" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                        </div>
+                    </div>
+                    
+                    <!-- Snippet -->
+                    <div>
+                        <label for="snippet" class="block text-sm font-medium text-gray-700">Snippet</label>
+                        <div class="mt-1">
+                            <textarea id="snippet" name="snippet" rows="3" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border"></textarea>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-500">A short summary of the post (like on the home page).</p>
+                    </div>
+
+                    <!-- Body -->
+                    <div>
+                        <label for="body" class="block text-sm font-medium text-gray-700">Body</label>
+                        <div class="mt-1">
+                            <textarea id="body" name="body" rows="12" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border"></textarea>
+                        </div>
+                         <p class="mt-2 text-sm text-gray-500">The main content of the article.</p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200">
+                            Publish Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-16">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-base text-gray-400">
+                &copy; 2025 The Current. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
