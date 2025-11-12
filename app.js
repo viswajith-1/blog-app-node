@@ -1,5 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
+require('dotenv').config()
+
+const dbURL = process.env.DB_URL
 
 const app = express()
 mongoose.connect(dbURL)
@@ -11,8 +14,6 @@ mongoose.connect(dbURL)
   })
 
 app.listen(3000)
-
-const dbURL = 'mongodb+srv://viswajith:viswajith123@nodetuts.enqsepu.mongodb.net/?appName=nodetuts'
 
 app.set('view engine', 'ejs')
 
