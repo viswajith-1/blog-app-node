@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+The title is now dynamic and will show the specific blog's title
+-->
+    <title><%= blog.title %></title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Configure Tailwind to use the sans-serif font -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-sans bg-gray-50 text-gray-900">
+    <!-- Header Navigation (Copied from index.ejs) -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-3xl font-bold text-indigo-600">The Current</span>
+          </div>
+          <!-- Navigation Links -->
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a
+              href="/"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              About
+            </a>
+            <a
+              href="/topics"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Topics
+            </a>
+            <a
+              href="/contact"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Contact
+            </a>
+            <a
+              href="/create"
+              class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            >
+              Create Post
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 
+  Main Blog Post Content 
+  This replaces the "Hero" and "Grid" from the index page.
+-->
+    <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <article class="bg-white rounded-lg shadow-lg p-8 md:p-12">
+        <!-- Post Header -->
+        <header class="mb-8">
+          <!-- Genre -->
+          <span
+            class="text-indigo-600 text-sm font-medium uppercase tracking-wide"
+            ><%= blog.genre %></span
+          >
+
+          <!-- Title -->
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">
+            <%= blog.title %>
+          </h1>
+
+          <!-- Meta Info -->
+          <div class="mt-6 text-gray-500 text-sm">
+            <span
+              >By
+              <strong class="text-gray-700"><%= blog.author %></strong></span
+            >
+            <span class="mx-2">&middot;</span>
+            <time datetime="<%= blog.createdAt.toISOString() %>">
+              <%= blog.createdAt.toDateString() %>
+            </time>
+          </div>
+        </header>
+
+        <!-- Post Body -->
+        <!-- 
+      The "whitespace-pre-line" class is important! 
+      It makes your blog body respect newlines (\n) 
+      so you can have paragraphs.
+    -->
+        <div
+          class="mt-12 text-lg text-gray-700 leading-relaxed whitespace-pre-line"
+        >
+          <%= blog.body %>
+        </div>
+
+        <!-- Delete Button -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+            <button
+              id="delete-button"
+              class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              data-doc="<%= blog._id %>"
+            >
+              <!-- Heroicon (trash) -->
+              <svg
+                class="-ml-1 mr-2 h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 6h6v10H7V6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Delete Post
+            </button>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer (Copied from index.ejs) -->
+    <footer class="bg-gray-800 mt-16">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-base text-gray-400">
+          &copy; 2025 The Current. All rights reserved.
+        </p>
+      </div>
+    </footer>
+    <script>
+      const trashcan = document.querySelector("#delete-button");
+      if (trashcan) {
+        trashcan.addEventListener("click", (e) => {
+          const endpoint = `/delete/${trashcan.dataset.doc}`;
+          fetch(endpoint, {
+            method: "DELETE",
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              window.location.href = "/";
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

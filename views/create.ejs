@@ -41,7 +41,7 @@
                     <a href="/about" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                         About
                     </a>
-                    <a href="#" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                    <a href="/topics" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
                         Topics
                     </a>
                     <a href="/contact" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
@@ -104,7 +104,24 @@
                          <p class="mt-2 text-sm text-gray-500">The main content of the article.</p>
                     </div>
 
-                    <!-- Submit Button -->
+                    <!-- Genre -->
+                    <div>
+                        <label for="genre" class="block text-sm font-medium text-gray-700">Genre</label>
+                        <div class="mt-1">
+                            <input type="text" name="genre" id="genre" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border">
+                        </div>
+                        <br>
+
+                    <!-- Author -->
+                    <div>
+                        <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+                        <div class="mt-1">
+                            <input id="author" name="author" rows="3" required class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm p-3 border"></textarea>
+                        </div>
+                    </div>
+                    <br>
+
+                     <!-- Submit Button  -->
                     <div>
                         <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors duration-200">
                             Publish Post
