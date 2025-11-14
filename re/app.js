@@ -4,8 +4,8 @@ require('dotenv').config()
 
 const dbURL = process.env.DB_URL
 
-const Blog = require('./models/blogs')
-const Contact = require('./models/contact') 
+const Blog = require('../models/blogs')
+const Contact = require('../models/contact') 
 
 const app = express()
 app.use (express.urlencoded({ extended: true }))
