@@ -1,127 +1,102 @@
-const express = require('express')
-const mongoose = require('mongoose')
-require('dotenv').config()
+const express = require('express');
+const serverless = require('serverless-http');
+const mongoose = require('mongoose');
+require('dotenv').config();
+const path = require("path");
 
-const dbURL = process.env.DB_URL
+const Blog = require('../models/blogs');
+const Contact = require('../models/contact');
 
-const Blog = require('../models/blogs')
-const Contact = require('../models/contact') 
+const app = express();
 
-const app = express()
-app.use (express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(dbURL)
-  .then(() => {
-    console.log('connected to db') 
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+// Set EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, "../views"));
 
-app.listen(3000)
+// Static files
+app.use(express.static(path.join(__dirname, "../public")));
 
-app.set('view engine', 'ejs')
-
-app.get('/', (req, res) => {
-  Blog.find()
-    .then((result) => {
-      res.render('index', { blogs: result })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
-
-app.get('/topics', (req, res) => {
-
-  const searchQuery = req.query.search;
-  let filter = {};
+// Connect to DB (only once)
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => console.log("Connected to DB"))
+  .catch((err) => console.log(err));
 
 
-  if (searchQuery) {
-    filter = {
-      $or: [
-
-        { title: { $regex: searchQuery, $options: 'i' } },
-        { snippet: { $regex: searchQuery, $options: 'i' } },
-        { author: { $regex: searchQuery, $options: 'i' } }
-      ]
-    };
+// ROUTES
+app.get('/', async (req, res) => {
+  try {
+    const blogs = await Blog.find();
+    res.render('index', { blogs });
+  } catch (err) {
+    console.log(err);
   }
-
-  Blog.find(filter).sort({ createdAt: -1 }) 
-    .then((result) => {
-      res.render('topics', { 
-        blogs: result,
-        search: searchQuery || '' 
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.render('topics', { blogs: [], search: searchQuery || '' });
-    });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about')
-})
+app.get('/topics', async (req, res) => {
+  try {
+    const searchQuery = req.query.search || "";
+    let filter = {};
 
-app.get('/contact', (req, res) => {
-  res.render('contact')
-})
-
-app.get('/create', (req, res) => {
-  res.render('create')
-})
-
-app.post('/create', (req, res) => {
-  console.log(req.body)
-  const blog = new Blog(req.body)
-  blog.save()
-    .then((result) => {
-      res.redirect('/')
-      console.log('Blog Created')
+    if (searchQuery) {
+      filter = {
+        $or: [
+          { title: { $regex: searchQuery, $options: "i" } },
+          { snippet: { $regex: searchQuery, $options: "i" } },
+          { author: { $regex: searchQuery, $options: "i" } },
+        ],
+      };
     }
-    )
-    .catch((err) => {
-      console.log(err)
-    })})
 
-app.post('/contact', (req, res) => {
-  console.log(req.body)
-  const contact = new Contact(req.body)
-  contact.save()
-    .then((result) => {
-      res.redirect('/')
-      console.log('Contact Form Submitted')
-    } )
-    .catch((err) => {
-      console.log(err)
-    })
-})
+    const blogs = await Blog.find(filter).sort({ createdAt: -1 });
+    res.render("topics", { blogs, search: searchQuery });
+  } catch (err) {
+    console.log(err);
+    res.render("topics", { blogs: [], search: "" });
+  }
+});
 
-app.get('/:id', (req, res) => {
-  const id = req.params.id
-  Blog.findById(id)
-    .then((result) => {
-      res.render('blog', { blog: result })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
+app.get('/about', (req, res) => res.render('about'));
+app.get('/contact', (req, res) => res.render('contact'));
+app.get('/create', (req, res) => res.render('create'));
 
-app.delete('/delete/:id', (req, res) => {
-  const id = req.params.id
-  Blog.findByIdAndDelete(id)
-    .then((result) => {
-      res.json({ redirect: '/' })
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-})
+app.post('/create', async (req, res) => {
+  try {
+    await Blog.create(req.body);
+    res.redirect('/');
+  } catch (err) {
+    console.log(err);
+  }
+});
 
+app.post('/contact', async (req, res) => {
+  try {
+    await Contact.create(req.body);
+    res.redirect('/');
+  } catch (err) {
+    console.log(err);
+  }
+});
 
+app.get('/:id', async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    res.render('blog', { blog });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
+app.delete('/delete/:id', async (req, res) => {
+  try {
+    await Blog.findByIdAndDelete(req.params.id);
+    res.json({ redirect: '/' });
+  } catch (err) {
+    console.log(err);
+  }
+});
 
+// Export for Vercel
+module.exports = serverless(app);
