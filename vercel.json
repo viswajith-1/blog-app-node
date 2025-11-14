@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "functions": {
-    "api/app.js": { "runtime": "nodejs18.x" }
-  },
+  "builds": [
+    { "src": "api/app.js", "use": "@vercel/node" }
+  ],
   "routes": [
-    { "src": "/(.*)", "dest": "/api/app.js" }
+    { "src": "/(.*)", "dest": "api/app.js" }
   ]
 }
