@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const path = require("path");
 
+
 const Blog = require('../models/blogs');
 const Contact = require('../models/contact');
 
@@ -26,6 +27,8 @@ mongoose
 
 
 // ROUTES
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.get('/', async (req, res) => {
   try {
     const blogs = await Blog.find();
