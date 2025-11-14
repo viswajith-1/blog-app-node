@@ -20,10 +20,8 @@ app.set('views', path.join(__dirname, "../views"));
 app.use(express.static(path.join(__dirname, "../public")));
 
 // Connect to DB (only once)
-mongoose
-  .connect(process.env.DB_URL)
-  .then(() => console.log("Connected to DB"))
-  .catch((err) => console.log(err));
+const { connectDB } = require("./db");
+connectDB();
 
 
 // ROUTES
