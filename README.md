@@ -70,7 +70,8 @@ You must have the following installed on your machine:
 
 ### ⚡ Running the Project
 
-    This uses `nodemon` to automatically restart the server when you save file changes.
+This uses `nodemon` to automatically restart the server when you save file changes.
+    
     ```sh
     nodemon app
     ```
