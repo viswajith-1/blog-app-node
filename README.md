@@ -72,9 +72,8 @@ You must have the following installed on your machine:
 
 This uses `nodemon` to automatically restart the server when you save file changes.
     
-    ```sh
+
     nodemon app
-    ```
 
 Once running, open your browser and navigate to `http://localhost:3000` (or the port you defined).
 
