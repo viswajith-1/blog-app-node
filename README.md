@@ -75,7 +75,6 @@ This uses `nodemon` to automatically restart the server when you save file chang
     ```sh
     nodemon app
     ```
-    *(This assumes you have a `dev` script in `package.json` like: `"dev": "nodemon app.js"`)*
 
 Once running, open your browser and navigate to `http://localhost:3000` (or the port you defined).
 
