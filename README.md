@@ -1,6 +1,6 @@
-# blog-app-node
+# The Current - Blog Website
 
-`blog-app-node` is a dynamic blog application built with Node.js, Express, EJS, and MongoDB. It's designed to be a fast, server-rendered platform for publishing and managing articles.
+`blog-app-node` is a dynamic blog application built with Node.js, Express, EJS, and MongoDB following MVC model. It's designed to be a fast, server-rendered platform for publishing and managing articles.
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
