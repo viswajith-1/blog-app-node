@@ -66,7 +66,7 @@ You must have the following installed on your machine:
     ```
 
 3.  **Set up Environment Variables:**
-    Create a file named `.env` in the root of the project. You will need to add your MongoDB connection string here. (See [Environment Variables](#-environment-variables) section below).
+    Create a file named `.env` in the root of the project. You will need to add your MongoDB connection string here.
 
 ### ⚡ Running the Project
 
