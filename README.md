@@ -56,10 +56,9 @@ You must have the following installed on your machine:
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/blog-app-node.git](https://github.com/your-username/blog-app-node.git)
+    git clone https://github.com/viswajith-1/blog-app-node.git
     cd blog-app-node
     ```
-    *(Remember to replace `your-username` with your actual GitHub username)*
 
 2.  **Install dependencies:**
     ```sh
@@ -71,23 +70,12 @@ You must have the following installed on your machine:
 
 ### ⚡ Running the Project
 
-1.  **Development Mode:**
     This uses `nodemon` to automatically restart the server when you save file changes.
     ```sh
-    npm run dev
+    nodemon app
     ```
     *(This assumes you have a `dev` script in `package.json` like: `"dev": "nodemon app.js"`)*
 
-2.  **Production Mode:**
-    ```sh
-    npm start
-    ```
-    *(This assumes you have a `start` script in `package.json` like: `"start": "node app.js"`)*
-
 Once running, open your browser and navigate to `http://localhost:3000` (or the port you defined).
 
----
 
-## 📁 Project Structure
-
-Here is a common structure for an EJS/Express project:
