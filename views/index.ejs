@@ -97,9 +97,8 @@
       <!-- Static Post Grid -->
       <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         <!-- Static Blog Post Card -->
-
-        <% if(blogs.length>0){ %> <% blogs.forEach(blog => { %>
-
+        <% count=0 %> <% if(blogs.length>0){ %> <% blogs.slice().reverse().forEach(blog => { %> <%
+        if(count<3) { %>
         <div
           class="bg-white rounded-lg shadow-lg flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
         >
@@ -137,7 +136,7 @@
           </div>
         </div>
         <!-- End Blog Post Card 1 -->
-        <% }) %> <% } else { %>
+        <% count++ }%> <% }) %> <% } else { %>
         <p>No Blogs to show</p>
         <% } %>
       </div>
